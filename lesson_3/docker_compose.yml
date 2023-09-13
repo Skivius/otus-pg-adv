@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  pg_db:
+    image: postgres:15.4
+    container_name: mypg
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=stage
+    volumes:
+      - ${POSTGRES_DIR:-/var/lib/postgres}:/var/lib/postgresql/data
+    ports:
+      - ${POSTGRES_PORT:-5432}:5432
