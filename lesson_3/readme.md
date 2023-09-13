@@ -1,3 +1,5 @@
+# Установка и настройка PostgteSQL в контейнере Docker
+
 # создание виртуалки
 
 ## user-data.yaml
@@ -29,6 +31,7 @@ yc compute instance create \
 
 <details>
 <summary>Результат создания</summary>
+```
 done (1m10s)
 id: epdrsdaerbgh2r14hm1j
 folder_id: b1ggfiad3opmftvi9r55
@@ -67,6 +70,7 @@ scheduling_policy:
 network_settings:
   type: STANDARD
 placement_policy: {}
+```
 </details>
 
 
@@ -264,6 +268,8 @@ stage=# select count(*) from test;
 
 # пересоздание контейнера с сервером
 
+- пересоздаём
+
 ```
 anton@epdrsdaerbgh2r14hm1j:~$ sudo docker container ls -a
 CONTAINER ID   IMAGE           COMMAND                  CREATED          STATUS                      PORTS                                       NAMES
@@ -281,6 +287,10 @@ CONTAINER ID   IMAGE       COMMAND   CREATED          STATUS                    
 fe2b7a231b02   pg-client   "psql"    25 minutes ago   Exited (0) 23 minutes ago             mypgclient
 anton@epdrsdaerbgh2r14hm1j:~$ sudo docker-compose up -d
 Creating mypg ... done
+```
+
+- подключаемся клиентским контейнером (тоже пересоздаем, т.к. контейнер имеет фиксированное имя) и проверяем данные
+```
 anton@epdrsdaerbgh2r14hm1j:~$ sudo docker rm mypgclient
 mypgclient
 anton@epdrsdaerbgh2r14hm1j:~$ sudo docker run --env-file=.env_pg --name=mypgclient --network="host" -it pg-client
