@@ -1,3 +1,5 @@
+# PG Advanced - Домашняя работа 2 - настройка дисков для Postgres
+
 # Добавление диска к VM в Yandex Cloud
 
 1. добавление через UI Yandex

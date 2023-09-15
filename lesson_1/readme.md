@@ -1,3 +1,5 @@
+# PG Advanced - Домашняя работа 1 - установка Postgres, уровни изоляции
+
 # Создание виртуалки в Yandex Cloud
 
 - параметры: otus-db-pg-vm-1, Intel Ice Lake, 2 CPU, доля 50%, 4 ГБ RAM, прерываемая, зона ru-central1-b
