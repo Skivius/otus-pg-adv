@@ -14,6 +14,7 @@ yc compute instance create \
   --preemptible \
   --metadata-from-file user-data=user-data.yaml
 ```
+[user-data.yaml](user-data.yaml)
 
 ## Установка Postgres
 
@@ -32,6 +33,7 @@ anton@otus-db-pg-vm-4:~$ chmod +x postgresql.sh
 anton@otus-db-pg-vm-4:~$ ./postgresql.sh
 ...
 ```
+[postgresql.sh](postgresql.sh)
 
 ## Тестирование pgbench
 
@@ -80,9 +82,13 @@ initial connection time = 3.992 ms
 tps = 235.778349 (without initial connection time)
 ```
 
+- количество транзакций в секунду = **235**
+
 ## Тюнинг
 
-https://pgconfigurator.cybertec.at/
+Настроим конфиг с помощью https://pgconfigurator.cybertec.at/ - для нашей виртуалки с 4Gb RAM, 2 CPU, 20Gb HDD
+
+[postgresql.conf](postgresql.conf)
 
 параметры не требующие рестарта:
 
@@ -138,7 +144,7 @@ latency stddev = 0.133 ms
 initial connection time = 4.361 ms
 tps = 1978.001882 (without initial connection time)
 ```
-- количество транзакций в секунду увеличилось с 235 до 1978 (прирост больше чем х8)
+- количество транзакций в секунду увеличилось с 235 до **1978** (прирост больше чем х8)
 
 ## Небезопасный тюнинг
 
@@ -180,4 +186,4 @@ initial connection time = 3.440 ms
 tps = 2119.697331 (without initial connection time)
 ```
 
-- количество транзакций в секунду увеличилось до 2119 (приросто почти х10 с первоначальным вариантом)
+- количество транзакций в секунду увеличилось до **2119** (прирост почти х10 с первоначальным вариантом)
