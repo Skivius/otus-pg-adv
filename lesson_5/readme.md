@@ -89,11 +89,15 @@ postgres@otus-db-pg-vm-5:~$ . ~/.bash_profile
 ```
 
 - инициализация
+
 `postgres@otus-db-pg-vm-5:~$ pg_probackup-15 init -B ${BACKUP_PATH}`
+
 INFO: Backup catalog '/backup/pg' successfully initialized
 
 - добавляем инстанс (имя любое, главное путь к PGDATA)
+
 `postgres@otus-db-pg-vm-5:~$ pg_probackup-15 add-instance -D /var/lib/postgresql/15/main --instance pg15`
+
 INFO: Instance 'pg15' successfully initialized
 
 - добавляем в кластер роль backup с правами
@@ -131,7 +135,7 @@ postgres@otus-db-pg-vm-5:~$ echo "localhost:5432:replication:backup:backup" >> ~
 postgres@otus-db-pg-vm-5:~$ chmod 600 .pgpass
 ```
 
-- добавим пользователя backup в bg_hba (тоже бд replication! +ipv6)
+- добавим пользователя backup в pg_hba (тоже бд replication! +ipv6)
 ```
 host    replication     backup          0.0.0.0/0               scram-sha-256
 host    replication     backup          ::0/0                   scram-sha-256
@@ -268,7 +272,7 @@ BACKUP INSTANCE 'pg15'
 
 ## Восстановление в новый кластер
 
-### Созадем кластер и включаем чексуммы
+### Созадем новый кластер и включаем чексуммы
 ```
 postgres@otus-db-pg-vm-5:~$ pg_createcluster 15 new
 Creating new PostgreSQL cluster 15/new ...
