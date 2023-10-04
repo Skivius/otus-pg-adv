@@ -111,6 +111,7 @@ cat temp.cfg | sudo tee -a /etc/default/etcd
 - стартуем etcd одновременно минимум на двух нодах, а лучше на всех трех, если после установки имеется запущенный кластер, сначала его остановим
 
 `sudo systemctl stop etcd`
+
 `sudo systemctl start etcd`
 
 - проверка
@@ -344,6 +345,10 @@ Oct 04 12:52:32 otus-db-haproxy haproxy[37816]: 94.233.70.118:49534 [04/Oct/2023
 - при попытке изменения данных через 5001 получаем SQL Error [25006]: ERROR: cannot execute INSERT in a read-only transaction
 
 ![Patroni secondary insert](screen_patroni_secondary_insert.png)
+
+- статистика haproxy
+
+![Haproxy stats](screen_haproxy_stats.png)
 
 ## Проверка отказоустойчивости
 
