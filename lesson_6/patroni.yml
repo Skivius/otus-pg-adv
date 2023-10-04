@@ -1,0 +1,51 @@
+name: pg1
+namespace: /patroni
+scope: pgcluster
+
+restapi:
+    connect_address: 10.129.0.8:8008
+    listen: 10.129.0.8:8008
+
+etcd3:
+    hosts: 10.129.0.20:2379,10.129.0.19:2379,10.129.0.31:2379
+
+bootstrap:
+    dcs:
+        ttl: 100
+        maximum_lag_on_failover: 1048576
+        postgresql:
+            use_pg_rewind: true
+            use_slots: true
+            parameters:
+                wal_level: hot_standby
+                hot_standby: on
+                max_wal_senders: 15
+                max_replication_slots: 15
+                wal_keep_size: 1024MB
+    initdb:
+        - encoding: UTF8
+    pg_hba:
+        - local all all peer
+        - host replication postgres ::1/128 md5
+        - host replication postgres 127.0.0.1/32 trust
+        - host replication postgres 10.129.0.8/24 md5
+        - host replication postgres 10.129.0.14/24 md5
+        - host replication postgres 10.129.0.26/24 md5
+        - host all all 0.0.0.0/0 md5
+
+postgresql:
+    authentication:
+        superuser:
+            username: postgres
+            password: postgres
+        replication:
+            username: postgres
+            password: postgres
+        pg_rewind:
+            username: postgres
+            password: postgres
+    connect_address: 10.129.0.8:5435
+    data_dir: /data/patroni/16/data
+    bin_dir: /usr/lib/postgresql/16/bin
+    listen: 10.129.0.8:5435
+    pgpass: /var/lib/postgresql/16/.pgpas

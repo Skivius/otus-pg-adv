@@ -1,0 +1,48 @@
+name: etcd-group
+service_account_id: ajencg9rd0c7pbb5vo2n
+description: "etcd vm group"
+instance_template:
+  platform_id: standard-v3
+  hostname: etcd{instance.index}
+  resources_spec:
+    memory: 2g
+    cores: 2
+    core_fraction: 20
+  boot_disk_spec:
+    mode: READ_WRITE
+    disk_spec:
+      image_id: fd80bm0rh4rkepi5ksdi
+      type_id: network-hdd
+      size: 18g
+  network_interface_specs:
+    - network_id: enpi8htrfm74c3ctr69r
+      primary_v4_address_spec: {
+        one_to_one_nat_spec: {
+          ip_version: IPV4
+        }
+      }
+  scheduling_policy:
+    preemptible: true
+  metadata:
+    user-data: |-
+      #cloud-config
+      users:
+        - name: anton
+          groups: sudo
+          shell: /bin/bash
+          sudo: [ 'ALL=(ALL) NOPASSWD:ALL' ]
+          ssh-authorized-keys:
+          - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9B5ZFis6NR4cTTXiDcEGUdZEhm+1crZ7x5H6zmcHpXkd6jpaOm6NDY7qJpJl+tO9AeqWd0x/yl/esVupBk7X+VIJwKIf4ZwUoB1851sBHnaFWhmHPhPyfNqZjwRJBpwXi/yKPzVxXlFHyX7p/K3+a8r+JQknwm1zU34tW0l0ORj5PniOa5sE+O9X71X0l3slf4ahIpenUNgIg2es8Qt21EUpV6RvtkLsRSenXpNNvhT2Wdo91cuA0kzMDExwcyxAHYq18/HO9CDFpQ0/Q09MaGsL0ocVF6MymCjFNGTwm8vWYT1kKQ4mWz3eM4P7P9evsBm9j4D911r3xqeJNzwg7bMLNtyFxXXkRfM3S2XytyHcHi8MKYH3+hmPoSL+Y9xrbOGeeDLG6CfJYEAToC7ttWAw3WvnDdq4vHdzQ1p/VOJwo0bKJzseD/kjauHmLznrQ6GQ1HrB72o2X3iHZTuW0FdbHk1ZKwrlH6vnlKnjZqkUz4Fl8ht+BXlgtQDxttBs= anton@ant
+deploy_policy:
+  max_unavailable: 1
+  max_expansion: 0
+scale_policy:
+  fixed_scale:
+    size: 3
+allocation_policy:
+  zones:
+    - zone_id: ru-central1-b
+      instance_tags_pool:
+      - etcd1
+      - etcd2
+      - etcd3
