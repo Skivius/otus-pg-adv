@@ -1,6 +1,6 @@
 # PG Advanced - Домашняя работа 10 - Загрузка больших данных
 
-Возьмём открытый датасет о погоде
+Возьмём открытый датасет с информацией о погоде
 https://www.kaggle.com/datasets/guillemservera/global-daily-climate-data/data
 
 В составе:
@@ -438,7 +438,7 @@ SELECT avg_temp_c FROM weather WHERE city_name = 'Volgograd' AND date >= '2000-0
 | СУБД     | Время |
 |----------|-------|
 | CS 4.1.3 | 9 min |
-| CH       | 5 min |
+| CH 23.9  | 5 min |
 | PG 16    | 9 min |
 
 вставки в клике явно быстрее, почти в два раза обгоняет кассандру и постгрес
@@ -457,6 +457,7 @@ SELECT avg_temp_c FROM weather WHERE city_name = 'Volgograd' AND date >= '2000-0
 
 - размер подключаемых к докеру каталогов с данными
 
+```
 anton@otus-db-pg-vm-10:~$ sudo du -sh /data/clickhouse/
 550M    /data/clickhouse/
 anton@otus-db-pg-vm-10:~$ sudo du -sh /data/clickhouse/data/
@@ -469,5 +470,6 @@ anton@otus-db-pg-vm-10:~$ sudo du -sh /data/postgresql/
 3.7G    /data/postgresql/
 anton@otus-db-pg-vm-10:~$ sudo du -sh /data/postgresql/pgdata/base
 2.7G    /data/postgresql/pgdata/base
+```
 
 объём данных в колоночных СУБД на порядок меньше
