@@ -1,0 +1,48 @@
+VERSION: 1.0.0.1
+DATABASE: otus
+USER: gpadmin
+PORT: 5432
+GPLOAD:
+    INPUT:
+        - SOURCE:
+            PORT: 8999
+            FILE:
+                - /tmp/weather.csv
+        - FORMAT: csv
+        - QUOTE: '"'
+        - COLUMNS:
+            - station_id: integer
+            - city_name: varchar(250)
+            - dt: text
+            - season: varchar(50)
+            - avg_temp_c: float4
+            - min_temp_c: float4
+            - max_temp_c: float4
+            - precipitation_mm: float4
+            - snow_depth_mm: float4
+            - avg_wind_dir_deg: float4
+            - avg_wind_speed_kmh: float4
+            - peak_wind_gust_kmh: float4
+            - avg_sea_level_pres_hpa: float4
+            - sunshine_total_min: float4
+        - HEADER: true
+        - ERROR_LIMIT: 100000
+        - LOG_ERRORS: true
+    OUTPUT:
+        - TABLE: public.weather
+        - MODE: insert
+        - MAPPING:
+            station_id: station_id 
+            city_name: city_name
+            dt: to_timestamp(dt,'YYYY-MM-DDXHH24:MI:SS.MS+TZH:TZM')
+            season: season
+            avg_temp_c: avg_temp_c
+            min_temp_c: min_temp_c
+            max_temp_c: max_temp_c
+            precipitation_mm: precipitation_mm
+            snow_depth_mm: snow_depth_mm
+            avg_wind_dir_deg: avg_wind_dir_deg
+            avg_wind_speed_kmh: avg_wind_speed_kmh
+            peak_wind_gust_kmh: peak_wind_gust_kmh
+            avg_sea_level_pres_hpa: avg_sea_level_pres_hpa
+            sunshine_total_min: sunshine_total_min

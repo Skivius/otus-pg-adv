@@ -1,0 +1,25 @@
+[INFO] --buffer-size value is not specified or invalid. Using default (8 kilobytes)
+/usr/local/greenplum-db-7.0.0/bin/gpcheckperf -f hostfile_exkeys -r n -d /tmp
+-------------------
+--  NETPERF TEST
+-------------------
+
+====================
+==  RESULT 2023-11-29T12:11:49.216638
+====================
+Netperf bisection bandwidth test
+otus-15-gpc -> otus-15-gps = 1308.940000
+otus-15-gps -> otus-15-gpc = 1171.380000
+otus-15-gpd -> otus-15-gpc = 615.240000
+otus-15-gpc -> otus-15-gpd = 629.730000
+
+Summary:
+sum = 3725.29 MB/sec
+min = 615.24 MB/sec
+max = 1308.94 MB/sec
+avg = 931.32 MB/sec
+median = 1171.38 MB/sec
+
+[Warning] connection between otus-15-gps and otus-15-gpc is no good
+[Warning] connection between otus-15-gpd and otus-15-gpc is no good
+[Warning] connection between otus-15-gpc and otus-15-gpd is no good

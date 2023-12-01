@@ -1,0 +1,81 @@
+20231129:12:54:21:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Checking configuration parameters, please wait...
+20231129:12:54:21:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Reading Greenplum configuration file gpconfigs/gpinitsystem_config
+20231129:12:54:21:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Locale has not been set in gpconfigs/gpinitsystem_config, will set to default value
+20231129:12:54:21:011352 gpinitsystem:otus-15-gpc:gpadmin-[WARN]:-Coordinator hostname otus-15-gpc does not match hostname output
+20231129:12:54:21:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Checking to see if otus-15-gpc can be resolved on this host
+20231129:12:54:22:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Can resolve otus-15-gpc to this host
+20231129:12:54:22:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-COORDINATOR_MAX_CONNECT not set, will set to default value 250
+20231129:12:54:22:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Checking configuration parameters, Completed
+20231129:12:54:22:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Commencing multi-home checks, please wait...
+...
+20231129:12:54:23:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Configuring build for standard array
+20231129:12:54:23:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Commencing multi-home checks, Completed
+20231129:12:54:23:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Building primary segment instance array, please wait...
+.........
+20231129:12:54:27:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Building group mirror array type , please wait...
+.........
+20231129:12:54:32:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Checking Coordinator host
+20231129:12:54:32:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Checking new segment hosts, please wait...
+..................
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Checking new segment hosts, Completed
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Greenplum Database Creation Parameters
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:---------------------------------------
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator Configuration
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:---------------------------------------
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator hostname       = otus-15-gpc
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator port           = 5432
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator instance dir   = /data/coordinator/gpseg-1
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator LOCALE         = 
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Greenplum segment prefix   = gpseg
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator Database       = otus
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator connections    = 250
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator buffers        = 128000kB
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Segment connections        = 750
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Segment buffers            = 128000kB
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Encoding                   = UNICODE
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Postgres param file        = Off
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Initdb to be used          = /usr/local/greenplum-db-7.0.0/bin/initdb
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-GP_LIBRARY_PATH is         = /usr/local/greenplum-db-7.0.0/lib
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-HEAP_CHECKSUM is           = on
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-HBA_HOSTNAMES is           = 0
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Ulimit check               = Passed
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Array host connect type    = Single hostname per node
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator IP address [1]      = ::1
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator IP address [2]      = 10.129.0.29
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator IP address [3]      = fe80::d20d:1dff:fe40:d5ee
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Standby Coordinator             = otus-15-gps
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Number of primary segments = 3
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Standby IP address         = ::1
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Standby IP address         = 10.129.0.25
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Standby IP address         = fe80::d20d:19ff:fe72:48f0
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Total Database segments    = 9
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Trusted shell              = ssh
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Number segment hosts       = 3
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Mirror port base           = 7000
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Number of mirror segments  = 3
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Mirroring config           = ON
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Mirroring type             = Group
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:----------------------------------------
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Greenplum Primary Segment Configuration
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:----------------------------------------
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpc.ru-central1.internal 	6000 	otus-15-gpc 	/data/primary/gpseg0 	2
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpc.ru-central1.internal 	6001 	otus-15-gpc 	/data/primary/gpseg1 	3
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpc.ru-central1.internal 	6002 	otus-15-gpc 	/data/primary/gpseg2 	4
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpd.ru-central1.internal 	6000 	otus-15-gpd 	/data/primary/gpseg3 	5
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpd.ru-central1.internal 	6001 	otus-15-gpd 	/data/primary/gpseg4 	6
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpd.ru-central1.internal 	6002 	otus-15-gpd 	/data/primary/gpseg5 	7
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gps.ru-central1.internal 	6000 	otus-15-gps 	/data/primary/gpseg6 	8
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gps.ru-central1.internal 	6001 	otus-15-gps 	/data/primary/gpseg7 	9
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gps.ru-central1.internal 	6002 	otus-15-gps 	/data/primary/gpseg8 	10
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:---------------------------------------
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Greenplum Mirror Segment Configuration
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:---------------------------------------
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpd.ru-central1.internal 	7000 	otus-15-gpd 	/data/mirror/gpseg0 	11
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpd.ru-central1.internal 	7001 	otus-15-gpd 	/data/mirror/gpseg1 	12
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpd.ru-central1.internal 	7002 	otus-15-gpd 	/data/mirror/gpseg2 	13
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gps.ru-central1.internal 	7000 	otus-15-gps 	/data/mirror/gpseg3 	14
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gps.ru-central1.internal 	7001 	otus-15-gps 	/data/mirror/gpseg4 	15
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gps.ru-central1.internal 	7002 	otus-15-gps 	/data/mirror/gpseg5 	16
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpc.ru-central1.internal 	7000 	otus-15-gpc 	/data/mirror/gpseg6 	17
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpc.ru-central1.internal 	7001 	otus-15-gpc 	/data/mirror/gpseg7 	18
+20231129:12:54:47:011352 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpc.ru-central1.internal 	7002 	otus-15-gpc 	/data/mirror/gpseg8 	19

@@ -1,0 +1,223 @@
+20231129:13:06:04:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Checking configuration parameters, please wait...
+20231129:13:06:05:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Reading Greenplum configuration file gpconfigs/gpinitsystem_config
+20231129:13:06:05:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Locale has not been set in gpconfigs/gpinitsystem_config, will set to default value
+20231129:13:06:05:027424 gpinitsystem:otus-15-gpc:gpadmin-[WARN]:-Coordinator hostname otus-15-gpc does not match hostname output
+20231129:13:06:05:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Checking to see if otus-15-gpc can be resolved on this host
+20231129:13:06:05:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Can resolve otus-15-gpc to this host
+20231129:13:06:05:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-COORDINATOR_MAX_CONNECT not set, will set to default value 250
+20231129:13:06:06:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Checking configuration parameters, Completed
+20231129:13:06:06:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Commencing multi-home checks, please wait...
+...
+20231129:13:06:06:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Configuring build for standard array
+20231129:13:06:06:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Commencing multi-home checks, Completed
+20231129:13:06:06:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Building primary segment instance array, please wait...
+.........
+20231129:13:06:10:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Building group mirror array type , please wait...
+.........
+20231129:13:06:15:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Checking Coordinator host
+20231129:13:06:15:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Checking new segment hosts, please wait...
+..................
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Checking new segment hosts, Completed
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Greenplum Database Creation Parameters
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:---------------------------------------
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator Configuration
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:---------------------------------------
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator hostname       = otus-15-gpc
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator port           = 5432
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator instance dir   = /data/coordinator/gpseg-1
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator LOCALE         = 
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Greenplum segment prefix   = gpseg
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator Database       = otus
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator connections    = 250
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator buffers        = 128000kB
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Segment connections        = 750
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Segment buffers            = 128000kB
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Encoding                   = UNICODE
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Postgres param file        = Off
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Initdb to be used          = /usr/local/greenplum-db-7.0.0/bin/initdb
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-GP_LIBRARY_PATH is         = /usr/local/greenplum-db-7.0.0/lib
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-HEAP_CHECKSUM is           = on
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-HBA_HOSTNAMES is           = 0
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Ulimit check               = Passed
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Array host connect type    = Single hostname per node
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator IP address [1]      = ::1
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator IP address [2]      = 10.129.0.29
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Coordinator IP address [3]      = fe80::d20d:1dff:fe40:d5ee
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Standby Coordinator             = otus-15-gps
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Number of primary segments = 3
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Standby IP address         = ::1
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Standby IP address         = 10.129.0.25
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Standby IP address         = fe80::d20d:19ff:fe72:48f0
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Total Database segments    = 9
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Trusted shell              = ssh
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Number segment hosts       = 3
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Mirror port base           = 7000
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Number of mirror segments  = 3
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Mirroring config           = ON
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Mirroring type             = Group
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:----------------------------------------
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Greenplum Primary Segment Configuration
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:----------------------------------------
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpc.ru-central1.internal 	6000 	otus-15-gpc 	/data/primary/gpseg0 	2
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpc.ru-central1.internal 	6001 	otus-15-gpc 	/data/primary/gpseg1 	3
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpc.ru-central1.internal 	6002 	otus-15-gpc 	/data/primary/gpseg2 	4
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpd.ru-central1.internal 	6000 	otus-15-gpd 	/data/primary/gpseg3 	5
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpd.ru-central1.internal 	6001 	otus-15-gpd 	/data/primary/gpseg4 	6
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpd.ru-central1.internal 	6002 	otus-15-gpd 	/data/primary/gpseg5 	7
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gps.ru-central1.internal 	6000 	otus-15-gps 	/data/primary/gpseg6 	8
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gps.ru-central1.internal 	6001 	otus-15-gps 	/data/primary/gpseg7 	9
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gps.ru-central1.internal 	6002 	otus-15-gps 	/data/primary/gpseg8 	10
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:---------------------------------------
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Greenplum Mirror Segment Configuration
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:---------------------------------------
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpd.ru-central1.internal 	7000 	otus-15-gpd 	/data/mirror/gpseg0 	11
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpd.ru-central1.internal 	7001 	otus-15-gpd 	/data/mirror/gpseg1 	12
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpd.ru-central1.internal 	7002 	otus-15-gpd 	/data/mirror/gpseg2 	13
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gps.ru-central1.internal 	7000 	otus-15-gps 	/data/mirror/gpseg3 	14
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gps.ru-central1.internal 	7001 	otus-15-gps 	/data/mirror/gpseg4 	15
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gps.ru-central1.internal 	7002 	otus-15-gps 	/data/mirror/gpseg5 	16
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpc.ru-central1.internal 	7000 	otus-15-gpc 	/data/mirror/gpseg6 	17
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpc.ru-central1.internal 	7001 	otus-15-gpc 	/data/mirror/gpseg7 	18
+20231129:13:06:30:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-otus-15-gpc.ru-central1.internal 	7002 	otus-15-gpc 	/data/mirror/gpseg8 	19
+
+Continue with Greenplum creation Yy|Nn (default=N):
+> y
+20231129:13:06:33:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Building the Coordinator instance database, please wait...
+20231129:13:06:37:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Starting the Coordinator in admin mode
+20231129:13:06:38:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Commencing parallel build of primary segment instances
+20231129:13:06:38:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Spawning parallel processes    batch [1], please wait...
+.........
+20231129:13:06:39:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Waiting for parallel processes batch [1], please wait...
+..............................
+20231129:13:07:09:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:------------------------------------------------
+20231129:13:07:09:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Parallel process exit status
+20231129:13:07:09:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:------------------------------------------------
+20231129:13:07:09:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Total processes marked as completed           = 9
+20231129:13:07:09:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Total processes marked as killed              = 0
+20231129:13:07:09:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Total processes marked as failed              = 0
+20231129:13:07:09:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:------------------------------------------------
+20231129:13:07:09:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Removing back out file
+20231129:13:07:09:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-No errors generated from parallel processes
+20231129:13:07:09:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Restarting the Greenplum instance in production mode
+20231129:13:07:09:041239 gpstop:otus-15-gpc:gpadmin-[INFO]:-Starting gpstop with args: -a -l /home/gpadmin/gpAdminLogs -m -d /data/coordinator/gpseg-1
+20231129:13:07:09:041239 gpstop:otus-15-gpc:gpadmin-[INFO]:-Gathering information and validating the environment...
+20231129:13:07:09:041239 gpstop:otus-15-gpc:gpadmin-[INFO]:-Obtaining Greenplum Coordinator catalog information
+20231129:13:07:09:041239 gpstop:otus-15-gpc:gpadmin-[INFO]:-Obtaining Segment details from coordinator...
+20231129:13:07:09:041239 gpstop:otus-15-gpc:gpadmin-[INFO]:-Greenplum Version: 'postgres (Greenplum Database) 7.0.0 build commit:0a7a3566873325aca1789ae6f818c80f17a9402d'
+20231129:13:07:09:041239 gpstop:otus-15-gpc:gpadmin-[INFO]:-Commencing Coordinator instance shutdown with mode='smart'
+20231129:13:07:09:041239 gpstop:otus-15-gpc:gpadmin-[INFO]:-Coordinator segment instance directory=/data/coordinator/gpseg-1
+20231129:13:07:10:041239 gpstop:otus-15-gpc:gpadmin-[INFO]:-Stopping coordinator segment and waiting for user connections to finish ...
+server shutting down
+20231129:13:07:11:041239 gpstop:otus-15-gpc:gpadmin-[INFO]:-Attempting forceful termination of any leftover coordinator process
+20231129:13:07:11:041239 gpstop:otus-15-gpc:gpadmin-[INFO]:-Terminating processes for segment /data/coordinator/gpseg-1
+20231129:13:07:13:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-Starting gpstart with args: -a -l /home/gpadmin/gpAdminLogs -d /data/coordinator/gpseg-1
+20231129:13:07:13:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-Gathering information and validating the environment...
+20231129:13:07:13:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-Greenplum Binary Version: 'postgres (Greenplum Database) 7.0.0 build commit:0a7a3566873325aca1789ae6f818c80f17a9402d'
+20231129:13:07:13:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-Greenplum Catalog Version: '302307241'
+20231129:13:07:13:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-Starting Coordinator instance in admin mode
+20231129:13:07:13:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-CoordinatorStart pg_ctl cmd is env GPSESSID=0000000000 GPERA=None $GPHOME/bin/pg_ctl -D /data/coordinator/gpseg-1 -l /data/coordinator/gpseg-1/log/startup.log -w -t 600 -o " -c gp_role=utility " start
+20231129:13:07:13:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-Obtaining Greenplum Coordinator catalog information
+20231129:13:07:13:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-Obtaining Segment details from coordinator...
+20231129:13:07:13:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-Setting new coordinator era
+20231129:13:07:13:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-Coordinator Started...
+Warning: the RSA host key for 'otus-15-gpc.ru-central1.internal' differs from the key for the IP address '10.129.0.29'
+Offending key for IP in /home/gpadmin/.ssh/known_hosts:3
+Matching host key in /home/gpadmin/.ssh/known_hosts:4
+Are you sure you want to continue connecting (yes/no)? yes
+20231129:13:07:30:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-Shutting down coordinator
+20231129:13:07:32:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-Commencing parallel segment instance startup, please wait...
+20231129:13:07:33:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-Process results...
+20231129:13:07:33:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-
+20231129:13:07:33:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-
+20231129:13:07:33:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-
+20231129:13:07:33:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-----------------------------------------------------
+20231129:13:07:33:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-   Successful segment starts                                            = 9
+20231129:13:07:33:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-   Failed segment starts                                                = 0
+20231129:13:07:33:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-   Skipped segment starts (segments are marked down in configuration)   = 0
+20231129:13:07:33:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-----------------------------------------------------
+20231129:13:07:33:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-Successfully started 9 of 9 segment instances 
+20231129:13:07:33:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-----------------------------------------------------
+20231129:13:07:33:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-Starting Coordinator instance otus-15-gpc directory /data/coordinator/gpseg-1 
+20231129:13:07:33:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-CoordinatorStart pg_ctl cmd is env GPSESSID=0000000000 GPERA=fd92dd349d1c26b8_231129130713 $GPHOME/bin/pg_ctl -D /data/coordinator/gpseg-1 -l /data/coordinator/gpseg-1/log/startup.log -w -t 600 -o " -c gp_role=dispatch " start
+20231129:13:07:34:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-Command pg_ctl reports Coordinator otus-15-gpc instance active
+20231129:13:07:34:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-Connecting to db template1 on host localhost
+20231129:13:07:34:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-No standby coordinator configured.  skipping...
+20231129:13:07:34:041625 gpstart:otus-15-gpc:gpadmin-[INFO]:-Database successfully started
+20231129:13:07:34:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Completed restart of Greenplum instance in production mode
+20231129:13:07:34:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Creating core GPDB extensions
+20231129:13:07:36:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Importing system collations
+20231129:13:07:50:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Commencing parallel build of mirror segment instances
+20231129:13:07:50:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Spawning parallel processes    batch [1], please wait...
+.........
+20231129:13:07:50:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Waiting for parallel processes batch [1], please wait...
+.............................
+20231129:13:08:19:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:------------------------------------------------
+20231129:13:08:19:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Parallel process exit status
+20231129:13:08:19:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:------------------------------------------------
+20231129:13:08:19:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Total processes marked as completed           = 9
+20231129:13:08:19:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Total processes marked as killed              = 0
+20231129:13:08:19:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Total processes marked as failed              = 0
+20231129:13:08:19:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:------------------------------------------------
+20231129:13:08:24:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Starting initialization of standby coordinator otus-15-gps
+20231129:13:08:25:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Validating environment and parameters for standby initialization...
+20231129:13:08:25:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Checking for data directory /data/coordinator/gpseg-1 on otus-15-gps
+Warning: the RSA host key for 'otus-15-gpc.ru-central1.internal' differs from the key for the IP address '10.129.0.29'
+Offending key for IP in /home/gpadmin/.ssh/known_hosts:3
+Matching host key in /home/gpadmin/.ssh/known_hosts:4
+Are you sure you want to continue connecting (yes/no)? yes
+20231129:13:08:32:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:------------------------------------------------------
+20231129:13:08:32:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Greenplum standby coordinator initialization parameters
+20231129:13:08:32:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:------------------------------------------------------
+20231129:13:08:32:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Greenplum coordinator hostname               = otus-15-gpc
+20231129:13:08:32:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Greenplum coordinator data directory         = /data/coordinator/gpseg-1
+20231129:13:08:32:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Greenplum coordinator port                   = 5432
+20231129:13:08:32:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Greenplum standby coordinator hostname       = otus-15-gps
+20231129:13:08:32:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Greenplum standby coordinator port           = 5432
+20231129:13:08:32:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Greenplum standby coordinator data directory = /data/coordinator/gpseg-1
+20231129:13:08:32:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Greenplum update system catalog         = On
+20231129:13:08:32:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Syncing Greenplum Database extensions to standby
+20231129:13:08:42:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Adding standby coordinator to catalog...
+20231129:13:08:42:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Database catalog updated successfully.
+20231129:13:08:42:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Updating pg_hba.conf file...
+20231129:13:08:42:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Starting to create new pg_hba.conf on primary segments
+20231129:13:08:45:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Successfully modified pg_hba.conf on primary segments to allow standby connection
+20231129:13:08:45:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-pg_hba.conf files updated successfully.
+20231129:13:08:54:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Starting standby coordinator
+20231129:13:08:54:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Checking if standby coordinator is running on host: otus-15-gps  in directory: /data/coordinator/gpseg-1
+20231129:13:08:55:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-CoordinatorStart pg_ctl cmd is env GPSESSID=0000000000 GPERA=None $GPHOME/bin/pg_ctl -D /data/coordinator/gpseg-1 -l /data/coordinator/gpseg-1/log/startup.log -t 600 -o " -c gp_role=dispatch " start
+20231129:13:08:56:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Cleaning up pg_hba.conf backup files...
+20231129:13:08:57:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Backup files of pg_hba.conf cleaned up successfully.
+20231129:13:08:57:047011 gpinitstandby:otus-15-gpc:gpadmin-[INFO]:-Successfully created standby coordinator on otus-15-gps
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Successfully completed standby coordinator initialization
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Scanning utility log file for any warning messages
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[WARN]:-*******************************************************
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[WARN]:-Scan of log file indicates that some warnings or errors
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[WARN]:-were generated during the array creation
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Please review contents of log file
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-/home/gpadmin/gpAdminLogs/gpinitsystem_20231129.log
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-To determine level of criticality
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-These messages could be from a previous run of the utility
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-that was called today!
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[WARN]:-*******************************************************
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Greenplum Database instance successfully created
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-------------------------------------------------------
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-To complete the environment configuration, please 
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-update gpadmin .bashrc file with the following
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-1. Ensure that the greenplum_path.sh file is sourced
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-2. Add "export COORDINATOR_DATA_DIRECTORY=/data/coordinator/gpseg-1"
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-   to access the Greenplum scripts for this instance:
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-   or, use -d /data/coordinator/gpseg-1 option for the Greenplum scripts
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-   Example gpstate -d /data/coordinator/gpseg-1
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Script log file = /home/gpadmin/gpAdminLogs/gpinitsystem_20231129.log
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-To remove instance, run gpdeletesystem utility
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Standby Coordinator otus-15-gps has been configured
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-To activate the Standby Coordinator Segment in the event of Coordinator
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-failure review options for gpactivatestandby
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-------------------------------------------------------
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-The Coordinator /data/coordinator/gpseg-1/pg_hba.conf post gpinitsystem
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-has been configured to allow all hosts within this new
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-array to intercommunicate. Any hosts external to this
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-new array must be explicitly added to this file
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-Refer to the Greenplum Admin support guide which is
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-located in the /usr/local/greenplum-db-7.0.0/docs directory
+20231129:13:08:57:027424 gpinitsystem:otus-15-gpc:gpadmin-[INFO]:-------------------------------------------------------

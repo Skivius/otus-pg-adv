@@ -1,0 +1,46 @@
+[INFO] --buffer-size value is not specified or invalid. Using default (8 kilobytes)
+/usr/local/greenplum-db-7.0.0/bin/gpcheckperf -f hostfile_exkeys -r ds -D -d /data/primary -d /data/mirror
+[Warning] Using 33053638656 bytes for disk performance test. This might take some time
+--------------------
+--  DISK WRITE TEST
+--------------------
+--------------------
+--  DISK READ TEST
+--------------------
+--------------------
+--  STREAM TEST
+--------------------
+
+====================
+==  RESULT 2023-11-29T12:33:42.550416
+====================
+
+ disk write avg time (sec): 529.01
+ disk write tot bytes: 99161014272
+ disk write tot bandwidth (MB/s): 178.76
+ disk write min bandwidth (MB/s): 59.58 [otus-15-gps]
+ disk write max bandwidth (MB/s): 59.59 [otus-15-gpc]
+ -- per host bandwidth --
+    disk write bandwidth (MB/s): 59.59 [otus-15-gpc]
+    disk write bandwidth (MB/s): 59.59 [otus-15-gpd]
+    disk write bandwidth (MB/s): 59.58 [otus-15-gps]
+
+
+ disk read avg time (sec): 469.00
+ disk read tot bytes: 99161014272
+ disk read tot bandwidth (MB/s): 201.64
+ disk read min bandwidth (MB/s): 67.07 [otus-15-gpd]
+ disk read max bandwidth (MB/s): 67.50 [otus-15-gpc]
+ -- per host bandwidth --
+    disk read bandwidth (MB/s): 67.07 [otus-15-gpd]
+    disk read bandwidth (MB/s): 67.50 [otus-15-gpc]
+    disk read bandwidth (MB/s): 67.07 [otus-15-gps]
+
+
+ stream tot bandwidth (MB/s): 29754.80
+ stream min bandwidth (MB/s): 9777.50 [otus-15-gps]
+ stream max bandwidth (MB/s): 10168.50 [otus-15-gpd]
+ -- per host bandwidth --
+    stream bandwidth (MB/s): 10168.50 [otus-15-gpd]
+    stream bandwidth (MB/s): 9808.80 [otus-15-gpc]
+    stream bandwidth (MB/s): 9777.50 [otus-15-gps]

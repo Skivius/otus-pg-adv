@@ -1,0 +1,28 @@
+TRUSTED_SHELL=ssh
+ENCODING=UNICODE
+SEG_PREFIX=gpseg
+HEAP_CHECKSUM=on
+HBA_HOSTNAMES=0
+QD_PRIMARY_ARRAY=otus-15-gpc~otus-15-gpc~5432~/data/coordinator/gpseg-1~1~-1~0
+declare -a PRIMARY_ARRAY=(
+otus-15-gpc.ru-central1.internal~otus-15-gpc~6000~/data/primary/gpseg0~2~0
+otus-15-gpc.ru-central1.internal~otus-15-gpc~6001~/data/primary/gpseg1~3~1
+otus-15-gpc.ru-central1.internal~otus-15-gpc~6002~/data/primary/gpseg2~4~2
+otus-15-gpd.ru-central1.internal~otus-15-gpd~6000~/data/primary/gpseg3~5~3
+otus-15-gpd.ru-central1.internal~otus-15-gpd~6001~/data/primary/gpseg4~6~4
+otus-15-gpd.ru-central1.internal~otus-15-gpd~6002~/data/primary/gpseg5~7~5
+otus-15-gps.ru-central1.internal~otus-15-gps~6000~/data/primary/gpseg6~8~6
+otus-15-gps.ru-central1.internal~otus-15-gps~6001~/data/primary/gpseg7~9~7
+otus-15-gps.ru-central1.internal~otus-15-gps~6002~/data/primary/gpseg8~10~8
+)
+declare -a MIRROR_ARRAY=(
+otus-15-gpd.ru-central1.internal~otus-15-gpd~7000~/data/mirror/gpseg0~11~0
+otus-15-gpd.ru-central1.internal~otus-15-gpd~7001~/data/mirror/gpseg1~12~1
+otus-15-gpd.ru-central1.internal~otus-15-gpd~7002~/data/mirror/gpseg2~13~2
+otus-15-gps.ru-central1.internal~otus-15-gps~7000~/data/mirror/gpseg3~14~3
+otus-15-gps.ru-central1.internal~otus-15-gps~7001~/data/mirror/gpseg4~15~4
+otus-15-gps.ru-central1.internal~otus-15-gps~7002~/data/mirror/gpseg5~16~5
+otus-15-gpc.ru-central1.internal~otus-15-gpc~7000~/data/mirror/gpseg6~17~6
+otus-15-gpc.ru-central1.internal~otus-15-gpc~7001~/data/mirror/gpseg7~18~7
+otus-15-gpc.ru-central1.internal~otus-15-gpc~7002~/data/mirror/gpseg8~19~8
+)
