@@ -251,7 +251,7 @@ The key's randomart image is:
 [anton@otus-15-gpc ~]$ sudo usermod -aG wheel gpadmin
 ```
 
-- Скачивание. На [оф. сайте](https://network.pivotal.io/products/vmware-greenplum#/releases/1379486/file_groups/15992), прямой ссылки на RPM нет, видим некий pivnet, идем смотреть на чудо - https://github.com/pivotal-cf/pivnet-cli, качаем бинарник этого пивнета, пробуем запустить:
+- Скачивание пакета Greenplum 7. На [оф. сайте](https://network.pivotal.io/products/vmware-greenplum#/releases/1379486/file_groups/15992), прямой ссылки на RPM нет, видим некий pivnet, идем смотреть на чудо - https://github.com/pivotal-cf/pivnet-cli, качаем бинарник этого пивнета, пробуем запустить:
 
 ```
 [anton@ant lesson_15]$ ./pivnet-linux-amd64-4.1.1 download-product-files --product-slug='vmware-greenplum' --release-version='7.0.0' --product-file-id=1607380
@@ -393,7 +393,7 @@ PasswordAuthentication yes
 sudo service sshd restart
 ```
 
-- Затем с координатора перекидываем ключик (и на самого себя тоже)
+- Затем с координатора перекидываем ключик (и на самого себя тоже), используем пароль пользователя gpadmin заданный выше
 
 ```
 [anton@otus-15-gpc ~]$ sudo su - gpadmin
@@ -438,7 +438,7 @@ otus-15-gps
 otus-15-gpd
 ```
 
-- Запускаем утилиту gpssh-exkeys
+- Запускаем утилиту gpssh-exkeys чтобы раскидать ключи по машинам
 
 ```
 [gpadmin@otus-15-gpc ~]$ gpssh-exkeys -f hostfile_exkeys 
@@ -582,10 +582,12 @@ ECDSA key fingerprint is SHA256:iUvcGsbM0nRV/JSDdW4TO+GwrEXecbeK/9MALjiB8gM.
 
 - Повторяем попытку (той же командой gpinitsystem). На этот раз кластер создался, несмотря на то что ещё пару раз спросило про ключ (ответил утвердительно - yes):
 
+```
 Warning: the RSA host key for 'otus-15-gpc.ru-central1.internal' differs from the key for the IP address '10.129.0.29'
 Offending key for IP in /home/gpadmin/.ssh/known_hosts:3
 Matching host key in /home/gpadmin/.ssh/known_hosts:4
 Are you sure you want to continue connecting (yes/no)? yes
+```
 
 [gpinitsystem_success.log](files/gpinitsystem_success.log) - лог успешного создания кластера
 
