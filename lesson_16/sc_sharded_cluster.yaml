@@ -1,0 +1,32 @@
+apiVersion: stackgres.io/v1alpha1
+kind: SGShardedCluster
+metadata:
+  name: otus
+spec:
+  type: citus
+  database: otus
+  postgres:
+    version: 'latest'
+  coordinator:
+    instances: 2
+    pods:
+      persistentVolume:
+        size: '10Gi'
+  shards:
+    clusters: 3
+    instancesPerCluster: 2
+    pods:
+      persistentVolume:
+        size: '15Gi'
+  nonProductionOptions:
+    disableClusterPodAntiAffinity: true
+    disableClusterResourceRequirements: true
+  postgresServices:
+    coordinator:
+      primary:
+        type: LoadBalancer
+      any:
+        type: NodePort
+    shards:
+      primaries:
+        type: NodePort
