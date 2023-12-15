@@ -254,3 +254,5 @@ SELECT max(max_temp_c), min(min_temp_c) FROM weather WHERE city_name = 'Volgogra
 SELECT avg_temp_c FROM weather WHERE city_name = 'Volgograd' AND dt >= '2000-01-01' AND dt < '2000-01-02';
 -- 1 row(s) fetched - 2.78s, -2.4
 ```
+
+- В итоге функционально YA облако выигрывает - более свежий постгрес, больше расширений, FQDN для постоянного подключения к мастеру и пр. VK - более дешевый и сердитый вариант.
