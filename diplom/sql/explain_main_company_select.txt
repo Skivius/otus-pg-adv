@@ -1,0 +1,96 @@
+-- план выполнения запроса по tenant, выделенному в отдельный шард, видно что используется public.acc_data_103062 и далее из каждой партиции один выделенный шард
+
+finance=# explain (analyze, buffers, verbose) select * from acc_data where company_id = 1;
+QUERY PLAN
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Custom Scan (Citus Adaptive)  (cost=0.00..0.00 rows=0 width=0) (actual time=462.675..479.780 rows=191245 loops=1)
+   Output: remote_scan.transaction_id, remote_scan.transaction_dt, remote_scan.company_id, remote_scan.company_id_src, remote_scan.account_id, remote_scan.account_id_src, remote_scan.operation_type, remote_scan.amount, remote_scan.currency_code, remote_scan.custom_1, remote_scan.custom_2, remote_scan.custom_3, remote_scan.custom_4, remote_scan.custom_5
+   Task Count: 1
+   Tuple data received from nodes: 6857 kB
+   Tasks Shown: All
+   ->  Task
+         Query: SELECT transaction_id, transaction_dt, company_id, company_id_src, account_id, account_id_src, operation_type, amount, currency_code, custom_1, custom_2, custom_3, custom_4, custom_5 FROM public.acc_data_103062 acc_data WHERE (company_id OPERATOR(pg_catalog.=) 1)
+         Tuple data received from node: 6857 kB
+         Node: host=citus-worker-2 port=5432 dbname=finance
+         ->  Append  (cost=0.00..5172.79 rows=191251 width=273) (actual time=0.011..32.907 rows=191245 loops=1)
+               Buffers: shared hit=1789
+               ->  Seq Scan on public.acc_data_p20230101_103128 acc_data_1  (cost=0.00..354.20 rows=16256 width=273) (actual time=0.010..1.588 rows=16256 loops=1)
+                     Output: acc_data_1.transaction_id, acc_data_1.transaction_dt, acc_data_1.company_id, acc_data_1.company_id_src, acc_data_1.account_id, acc_data_1.account_id_src, acc_data_1.operation_type, acc_data_1.amount, acc_data_1.currency_code, acc_data_1.custom_1, acc_data_1.custom_2, acc_data_1.custom_3, acc_data_1.custom_4, acc_data_1.custom_5
+                     Filter: (acc_data_1.company_id = 1)
+                     Buffers: shared hit=151
+               ->  Seq Scan on public.acc_data_p20230201_103131 acc_data_2  (cost=0.00..319.25 rows=14660 width=273) (actual time=0.011..1.375 rows=14660 loops=1)
+                     Output: acc_data_2.transaction_id, acc_data_2.transaction_dt, acc_data_2.company_id, acc_data_2.company_id_src, acc_data_2.account_id, acc_data_2.account_id_src, acc_data_2.operation_type, acc_data_2.amount, acc_data_2.currency_code, acc_data_2.custom_1, acc_data_2.custom_2, acc_data_2.custom_3, acc_data_2.custom_4, acc_data_2.custom_5
+                     Filter: (acc_data_2.company_id = 1)
+                     Buffers: shared hit=136
+               ->  Seq Scan on public.acc_data_p20230301_103134 acc_data_3  (cost=0.00..356.73 rows=16378 width=273) (actual time=0.012..1.580 rows=16378 loops=1)
+                     Output: acc_data_3.transaction_id, acc_data_3.transaction_dt, acc_data_3.company_id, acc_data_3.company_id_src, acc_data_3.account_id, acc_data_3.account_id_src, acc_data_3.operation_type, acc_data_3.amount, acc_data_3.currency_code, acc_data_3.custom_1, acc_data_3.custom_2, acc_data_3.custom_3, acc_data_3.custom_4, acc_data_3.custom_5
+                     Filter: (acc_data_3.company_id = 1)
+                     Buffers: shared hit=152
+               ->  Seq Scan on public.acc_data_p20230401_103137 acc_data_4  (cost=0.00..342.54 rows=15723 width=273) (actual time=0.010..1.528 rows=15723 loops=1)
+                     Output: acc_data_4.transaction_id, acc_data_4.transaction_dt, acc_data_4.company_id, acc_data_4.company_id_src, acc_data_4.account_id, acc_data_4.account_id_src, acc_data_4.operation_type, acc_data_4.amount, acc_data_4.currency_code, acc_data_4.custom_1, acc_data_4.custom_2, acc_data_4.custom_3, acc_data_4.custom_4, acc_data_4.custom_5
+                     Filter: (acc_data_4.company_id = 1)
+                     Buffers: shared hit=146
+               ->  Seq Scan on public.acc_data_p20230501_103140 acc_data_5  (cost=0.00..354.25 rows=16260 width=273) (actual time=0.022..1.594 rows=16260 loops=1)
+                     Output: acc_data_5.transaction_id, acc_data_5.transaction_dt, acc_data_5.company_id, acc_data_5.company_id_src, acc_data_5.account_id, acc_data_5.account_id_src, acc_data_5.operation_type, acc_data_5.amount, acc_data_5.currency_code, acc_data_5.custom_1, acc_data_5.custom_2, acc_data_5.custom_3, acc_data_5.custom_4, acc_data_5.custom_5
+                     Filter: (acc_data_5.company_id = 1)
+                     Buffers: shared hit=151
+               ->  Seq Scan on public.acc_data_p20230601_103143 acc_data_6  (cost=0.00..342.23 rows=15698 width=273) (actual time=0.009..1.534 rows=15698 loops=1)
+                     Output: acc_data_6.transaction_id, acc_data_6.transaction_dt, acc_data_6.company_id, acc_data_6.company_id_src, acc_data_6.account_id, acc_data_6.account_id_src, acc_data_6.operation_type, acc_data_6.amount, acc_data_6.currency_code, acc_data_6.custom_1, acc_data_6.custom_2, acc_data_6.custom_3, acc_data_6.custom_4, acc_data_6.custom_5
+                     Filter: (acc_data_6.company_id = 1)
+                     Buffers: shared hit=146
+               ->  Seq Scan on public.acc_data_p20230701_103146 acc_data_7  (cost=0.00..354.45 rows=16276 width=273) (actual time=0.011..1.604 rows=16276 loops=1)
+                     Output: acc_data_7.transaction_id, acc_data_7.transaction_dt, acc_data_7.company_id, acc_data_7.company_id_src, acc_data_7.account_id, acc_data_7.account_id_src, acc_data_7.operation_type, acc_data_7.amount, acc_data_7.currency_code, acc_data_7.custom_1, acc_data_7.custom_2, acc_data_7.custom_3, acc_data_7.custom_4, acc_data_7.custom_5
+                     Filter: (acc_data_7.company_id = 1)
+                     Buffers: shared hit=151
+               ->  Seq Scan on public.acc_data_p20230801_103149 acc_data_8  (cost=0.00..353.83 rows=16226 width=273) (actual time=0.012..1.587 rows=16226 loops=1)
+                     Output: acc_data_8.transaction_id, acc_data_8.transaction_dt, acc_data_8.company_id, acc_data_8.company_id_src, acc_data_8.account_id, acc_data_8.account_id_src, acc_data_8.operation_type, acc_data_8.amount, acc_data_8.currency_code, acc_data_8.custom_1, acc_data_8.custom_2, acc_data_8.custom_3, acc_data_8.custom_4, acc_data_8.custom_5
+                     Filter: (acc_data_8.company_id = 1)
+                     Buffers: shared hit=151
+               ->  Seq Scan on public.acc_data_p20230901_103065 acc_data_9  (cost=0.00..342.59 rows=15727 width=273) (actual time=0.007..1.540 rows=15727 loops=1)
+                     Output: acc_data_9.transaction_id, acc_data_9.transaction_dt, acc_data_9.company_id, acc_data_9.company_id_src, acc_data_9.account_id, acc_data_9.account_id_src, acc_data_9.operation_type, acc_data_9.amount, acc_data_9.currency_code, acc_data_9.custom_1, acc_data_9.custom_2, acc_data_9.custom_3, acc_data_9.custom_4, acc_data_9.custom_5
+                     Filter: (acc_data_9.company_id = 1)
+                     Buffers: shared hit=146
+               ->  Seq Scan on public.acc_data_p20231001_103068 acc_data_10  (cost=0.00..351.66 rows=16133 width=273) (actual time=0.008..1.690 rows=16133 loops=1)
+                     Output: acc_data_10.transaction_id, acc_data_10.transaction_dt, acc_data_10.company_id, acc_data_10.company_id_src, acc_data_10.account_id, acc_data_10.account_id_src, acc_data_10.operation_type, acc_data_10.amount, acc_data_10.currency_code, acc_data_10.custom_1, acc_data_10.custom_2, acc_data_10.custom_3, acc_data_10.custom_4, acc_data_10.custom_5
+                     Filter: (acc_data_10.company_id = 1)
+                     Buffers: shared hit=150
+               ->  Seq Scan on public.acc_data_p20231101_103071 acc_data_11  (cost=0.00..342.01 rows=15681 width=273) (actual time=0.012..1.521 rows=15681 loops=1)
+                     Output: acc_data_11.transaction_id, acc_data_11.transaction_dt, acc_data_11.company_id, acc_data_11.company_id_src, acc_data_11.account_id, acc_data_11.account_id_src, acc_data_11.operation_type, acc_data_11.amount, acc_data_11.currency_code, acc_data_11.custom_1, acc_data_11.custom_2, acc_data_11.custom_3, acc_data_11.custom_4, acc_data_11.custom_5
+                     Filter: (acc_data_11.company_id = 1)
+                     Buffers: shared hit=146
+               ->  Seq Scan on public.acc_data_p20231201_103074 acc_data_12  (cost=0.00..353.84 rows=16227 width=273) (actual time=0.008..1.561 rows=16227 loops=1)
+                     Output: acc_data_12.transaction_id, acc_data_12.transaction_dt, acc_data_12.company_id, acc_data_12.company_id_src, acc_data_12.account_id, acc_data_12.account_id_src, acc_data_12.operation_type, acc_data_12.amount, acc_data_12.currency_code, acc_data_12.custom_1, acc_data_12.custom_2, acc_data_12.custom_3, acc_data_12.custom_4, acc_data_12.custom_5
+                     Filter: (acc_data_12.company_id = 1)
+                     Buffers: shared hit=151
+               ->  Index Scan using acc_data_p20240101_pkey_103077 on public.acc_data_p20240101_103077 acc_data_13  (cost=0.14..8.16 rows=1 width=532) (actual time=0.011..0.011 rows=0 loops=1)
+                     Output: acc_data_13.transaction_id, acc_data_13.transaction_dt, acc_data_13.company_id, acc_data_13.company_id_src, acc_data_13.account_id, acc_data_13.account_id_src, acc_data_13.operation_type, acc_data_13.amount, acc_data_13.currency_code, acc_data_13.custom_1, acc_data_13.custom_2, acc_data_13.custom_3, acc_data_13.custom_4, acc_data_13.custom_5
+                     Index Cond: (acc_data_13.company_id = 1)
+                     Buffers: shared hit=2
+               ->  Index Scan using acc_data_p20240201_pkey_103080 on public.acc_data_p20240201_103080 acc_data_14  (cost=0.14..8.16 rows=1 width=532) (actual time=0.002..0.002 rows=0 loops=1)
+                     Output: acc_data_14.transaction_id, acc_data_14.transaction_dt, acc_data_14.company_id, acc_data_14.company_id_src, acc_data_14.account_id, acc_data_14.account_id_src, acc_data_14.operation_type, acc_data_14.amount, acc_data_14.currency_code, acc_data_14.custom_1, acc_data_14.custom_2, acc_data_14.custom_3, acc_data_14.custom_4, acc_data_14.custom_5
+                     Index Cond: (acc_data_14.company_id = 1)
+                     Buffers: shared hit=2
+               ->  Index Scan using acc_data_p20240301_pkey_103083 on public.acc_data_p20240301_103083 acc_data_15  (cost=0.14..8.16 rows=1 width=532) (actual time=0.002..0.002 rows=0 loops=1)
+                     Output: acc_data_15.transaction_id, acc_data_15.transaction_dt, acc_data_15.company_id, acc_data_15.company_id_src, acc_data_15.account_id, acc_data_15.account_id_src, acc_data_15.operation_type, acc_data_15.amount, acc_data_15.currency_code, acc_data_15.custom_1, acc_data_15.custom_2, acc_data_15.custom_3, acc_data_15.custom_4, acc_data_15.custom_5
+                     Index Cond: (acc_data_15.company_id = 1)
+                     Buffers: shared hit=2
+               ->  Index Scan using acc_data_p20240401_pkey_103086 on public.acc_data_p20240401_103086 acc_data_16  (cost=0.14..8.16 rows=1 width=532) (actual time=0.014..0.014 rows=0 loops=1)
+                     Output: acc_data_16.transaction_id, acc_data_16.transaction_dt, acc_data_16.company_id, acc_data_16.company_id_src, acc_data_16.account_id, acc_data_16.account_id_src, acc_data_16.operation_type, acc_data_16.amount, acc_data_16.currency_code, acc_data_16.custom_1, acc_data_16.custom_2, acc_data_16.custom_3, acc_data_16.custom_4, acc_data_16.custom_5
+                     Index Cond: (acc_data_16.company_id = 1)
+                     Buffers: shared hit=2
+               ->  Index Scan using acc_data_p20240501_pkey_103089 on public.acc_data_p20240501_103089 acc_data_17  (cost=0.14..8.16 rows=1 width=532) (actual time=0.010..0.010 rows=0 loops=1)
+                     Output: acc_data_17.transaction_id, acc_data_17.transaction_dt, acc_data_17.company_id, acc_data_17.company_id_src, acc_data_17.account_id, acc_data_17.account_id_src, acc_data_17.operation_type, acc_data_17.amount, acc_data_17.currency_code, acc_data_17.custom_1, acc_data_17.custom_2, acc_data_17.custom_3, acc_data_17.custom_4, acc_data_17.custom_5
+                     Index Cond: (acc_data_17.company_id = 1)
+                     Buffers: shared hit=2
+               ->  Index Scan using acc_data_default_pkey_103092 on public.acc_data_default_103092 acc_data_18  (cost=0.14..8.16 rows=1 width=532) (actual time=0.005..0.005 rows=0 loops=1)
+                     Output: acc_data_18.transaction_id, acc_data_18.transaction_dt, acc_data_18.company_id, acc_data_18.company_id_src, acc_data_18.account_id, acc_data_18.account_id_src, acc_data_18.operation_type, acc_data_18.amount, acc_data_18.currency_code, acc_data_18.custom_1, acc_data_18.custom_2, acc_data_18.custom_3, acc_data_18.custom_4, acc_data_18.custom_5
+                     Index Cond: (acc_data_18.company_id = 1)
+                     Buffers: shared hit=2
+             Planning Time: 3.423 ms
+             Execution Time: 55.781 ms
+   Buffers: temp read=1351 written=1351
+ Planning:
+   Buffers: shared hit=10
+ Planning Time: 0.147 ms
+ Execution Time: 487.906 ms
+(90 rows)

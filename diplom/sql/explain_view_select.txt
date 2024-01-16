@@ -1,0 +1,141 @@
+                                                                                                                                                                                                                                                    QUERY PLAN                                                                                                                                                                                                                                                     
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Custom Scan (Citus Adaptive)  (cost=0.00..0.00 rows=0 width=0) (actual time=4460.376..4460.377 rows=5 loops=1)
+   ->  Distributed Subplan 1_1
+         Subplan Duration: 13488.89 ms
+         Intermediate Data Size: 173 MB
+         Result destination: Write locally
+         ->  Foreign Scan on cold_acc_data  (cost=100.00..114.41 rows=147 width=532) (actual time=2.065..11361.343 rows=1915137 loops=1)
+         Planning Time: 0.000 ms
+         Execution Time: 11433.250 ms
+   ->  Distributed Subplan 1_2
+         Subplan Duration: 12727.75 ms
+         Intermediate Data Size: 364 MB
+         Result destination: Write locally
+         ->  Custom Scan (Citus Adaptive)  (cost=0.00..0.00 rows=100000 width=532) (actual time=6273.287..6613.537 rows=4025064 loops=1)
+               Task Count: 34
+               Tuple data received from nodes: 141 MB
+               Tasks Shown: One of 34
+               ->  Task
+                     Tuple data received from node: 27 MB
+                     Node: host=citus-worker-1 port=5432 dbname=finance
+                     ->  Append  (cost=0.00..18671.83 rows=767664 width=273) (actual time=0.013..157.718 rows=767091 loops=1)
+                           Buffers: shared read=7117
+                           ->  Seq Scan on acc_data_p20220101_104113 acc_data_1  (cost=0.00..629.46 rows=32646 width=273) (actual time=0.012..4.470 rows=32646 loops=1)
+                                 Buffers: shared read=303
+                           ->  Seq Scan on acc_data_p20220201_104147 acc_data_2  (cost=0.00..567.18 rows=29418 width=273) (actual time=0.009..4.013 rows=29418 loops=1)
+                                 Buffers: shared read=273
+                           ->  Seq Scan on acc_data_p20220301_104181 acc_data_3  (cost=0.00..629.19 rows=32619 width=273) (actual time=0.009..4.467 rows=32619 loops=1)
+                                 Buffers: shared read=303
+                           ->  Seq Scan on acc_data_p20220401_104215 acc_data_4  (cost=0.00..608.81 rows=31581 width=273) (actual time=0.009..4.364 rows=31581 loops=1)
+                                 Buffers: shared read=293
+                           ->  Seq Scan on acc_data_p20220501_104249 acc_data_5  (cost=0.00..627.17 rows=32517 width=273) (actual time=0.008..4.512 rows=32517 loops=1)
+                                 Buffers: shared read=302
+                           ->  Seq Scan on acc_data_p20220601_104283 acc_data_6  (cost=0.00..609.12 rows=31612 width=273) (actual time=0.010..4.368 rows=31612 loops=1)
+                                 Buffers: shared read=293
+                           ->  Seq Scan on acc_data_p20220701_104317 acc_data_7  (cost=0.00..629.35 rows=32635 width=273) (actual time=0.009..4.150 rows=32635 loops=1)
+                                 Buffers: shared read=303
+                           ->  Seq Scan on acc_data_p20220801_104351 acc_data_8  (cost=0.00..629.37 rows=32637 width=273) (actual time=0.007..4.279 rows=32637 loops=1)
+                                 Buffers: shared read=303
+                           ->  Seq Scan on acc_data_p20220901_104385 acc_data_9  (cost=0.00..607.09 rows=31509 width=273) (actual time=0.008..4.062 rows=31509 loops=1)
+                                 Buffers: shared read=292
+                           ->  Seq Scan on acc_data_p20221001_104419 acc_data_10  (cost=0.00..627.87 rows=32587 width=273) (actual time=0.010..4.400 rows=32587 loops=1)
+                                 Buffers: shared read=302
+                           ->  Seq Scan on acc_data_p20221101_104453 acc_data_11  (cost=0.00..607.07 rows=31507 width=273) (actual time=0.015..4.290 rows=31507 loops=1)
+                                 Buffers: shared read=292
+                           ->  Seq Scan on acc_data_p20221201_104487 acc_data_12  (cost=0.00..626.81 rows=32481 width=273) (actual time=0.009..4.672 rows=32481 loops=1)
+                                 Buffers: shared read=302
+                           ->  Seq Scan on acc_data_p20230101_102723 acc_data_13  (cost=0.00..629.84 rows=32684 width=273) (actual time=0.006..4.458 rows=32684 loops=1)
+                                 Buffers: shared read=303
+                           ->  Seq Scan on acc_data_p20230201_102755 acc_data_14  (cost=0.00..565.18 rows=29318 width=273) (actual time=0.009..3.940 rows=29318 loops=1)
+                                 Buffers: shared read=272
+                           ->  Seq Scan on acc_data_p20230301_102787 acc_data_15  (cost=0.00..627.79 rows=32579 width=273) (actual time=0.008..4.328 rows=32579 loops=1)
+                                 Buffers: shared read=302
+                           ->  Seq Scan on acc_data_p20230401_102819 acc_data_16  (cost=0.00..607.05 rows=31505 width=273) (actual time=0.009..3.716 rows=31505 loops=1)
+                                 Buffers: shared read=292
+                           ->  Seq Scan on acc_data_p20230501_102851 acc_data_17  (cost=0.00..631.25 rows=32725 width=273) (actual time=0.007..2.938 rows=32725 loops=1)
+                                 Buffers: shared read=304
+                           ->  Seq Scan on acc_data_p20230601_102883 acc_data_18  (cost=0.00..606.17 rows=31417 width=273) (actual time=0.005..2.741 rows=31417 loops=1)
+                                 Buffers: shared read=292
+                           ->  Seq Scan on acc_data_p20230701_102915 acc_data_19  (cost=0.00..625.85 rows=32485 width=273) (actual time=0.008..2.659 rows=32485 loops=1)
+                                 Buffers: shared read=301
+                           ->  Seq Scan on acc_data_p20230801_102947 acc_data_20  (cost=0.00..626.93 rows=32493 width=273) (actual time=0.005..2.518 rows=32493 loops=1)
+                                 Buffers: shared read=302
+                           ->  Seq Scan on acc_data_p20230901_102051 acc_data_21  (cost=0.00..608.79 rows=31579 width=273) (actual time=0.005..2.440 rows=31579 loops=1)
+                                 Buffers: shared read=293
+                           ->  Seq Scan on acc_data_p20231001_102083 acc_data_22  (cost=0.00..628.02 rows=32602 width=273) (actual time=0.005..2.562 rows=32602 loops=1)
+                                 Buffers: shared read=302
+                           ->  Seq Scan on acc_data_p20231101_102115 acc_data_23  (cost=0.00..606.63 rows=31463 width=273) (actual time=0.008..2.344 rows=31463 loops=1)
+                                 Buffers: shared read=292
+                           ->  Seq Scan on acc_data_p20231201_102147 acc_data_24  (cost=0.00..625.92 rows=32492 width=273) (actual time=0.006..2.448 rows=32492 loops=1)
+                                 Buffers: shared read=301
+                           ->  Seq Scan on acc_data_p20240101_102179 acc_data_25  (cost=0.00..0.00 rows=1 width=532) (actual time=0.001..0.001 rows=0 loops=1)
+                           ->  Seq Scan on acc_data_p20240201_102211 acc_data_26  (cost=0.00..0.00 rows=1 width=532) (actual time=0.001..0.001 rows=0 loops=1)
+                           ->  Seq Scan on acc_data_p20240301_102243 acc_data_27  (cost=0.00..0.00 rows=1 width=532) (actual time=0.003..0.003 rows=0 loops=1)
+                           ->  Seq Scan on acc_data_p20240401_102275 acc_data_28  (cost=0.00..0.00 rows=1 width=532) (actual time=0.001..0.001 rows=0 loops=1)
+                           ->  Seq Scan on acc_data_p20240501_102307 acc_data_29  (cost=0.00..0.00 rows=1 width=532) (actual time=0.001..0.001 rows=0 loops=1)
+                           ->  Seq Scan on acc_data_p20240601_103161 acc_data_30  (cost=0.00..0.00 rows=1 width=532) (actual time=0.001..0.001 rows=0 loops=1)
+                           ->  Seq Scan on acc_data_p20240701_103195 acc_data_31  (cost=0.00..0.00 rows=1 width=532) (actual time=0.002..0.002 rows=0 loops=1)
+                           ->  Seq Scan on acc_data_p20240801_103229 acc_data_32  (cost=0.00..0.00 rows=1 width=532) (actual time=0.001..0.001 rows=0 loops=1)
+                           ->  Seq Scan on acc_data_p20240901_103263 acc_data_33  (cost=0.00..0.00 rows=1 width=532) (actual time=0.001..0.001 rows=0 loops=1)
+                           ->  Seq Scan on acc_data_p20241001_103297 acc_data_34  (cost=0.00..0.00 rows=1 width=532) (actual time=0.001..0.001 rows=0 loops=1)
+                           ->  Seq Scan on acc_data_p20241101_103331 acc_data_35  (cost=0.00..0.00 rows=1 width=532) (actual time=0.002..0.002 rows=0 loops=1)
+                           ->  Seq Scan on acc_data_p20241201_103365 acc_data_36  (cost=0.00..0.00 rows=1 width=532) (actual time=0.001..0.001 rows=0 loops=1)
+                           ->  Seq Scan on acc_data_p20250101_103399 acc_data_37  (cost=0.00..11.40 rows=140 width=532) (actual time=0.001..0.001 rows=0 loops=1)
+                           ->  Seq Scan on acc_data_p20250201_103433 acc_data_38  (cost=0.00..11.40 rows=140 width=532) (actual time=0.001..0.001 rows=0 loops=1)
+                           ->  Seq Scan on acc_data_p20250301_103467 acc_data_39  (cost=0.00..11.40 rows=140 width=532) (actual time=0.002..0.002 rows=0 loops=1)
+                           ->  Seq Scan on acc_data_p20250401_103501 acc_data_40  (cost=0.00..11.40 rows=140 width=532) (actual time=0.001..0.001 rows=0 loops=1)
+                           ->  Seq Scan on acc_data_default_102339 acc_data_41  (cost=0.00..0.00 rows=1 width=273) (actual time=0.001..0.001 rows=0 loops=1)
+                         Planning Time: 1.077 ms
+                         Execution Time: 280.902 ms
+               Buffers: shared hit=82, temp read=28431 written=28431
+         Planning Time: 0.000 ms
+         Execution Time: 6767.652 ms
+   ->  Distributed Subplan 1_3
+         Subplan Duration: 24252.52 ms
+         Intermediate Data Size: 537 MB
+         Result destination: Write locally
+         ->  Custom Scan (Citus Adaptive)  (cost=0.00..0.00 rows=0 width=0) (actual time=19240.556..19745.856 rows=5940201 loops=1)
+               Task Count: 1
+               Tuple data received from nodes: 208 MB
+               Tasks Shown: All
+               ->  Task
+                     Tuple data received from node: 208 MB
+                     Node: host=localhost port=5432 dbname=finance
+                     ->  Unique  (cost=657846.78..693606.82 rows=953601 width=532) (actual time=6918.071..9403.390 rows=5940201 loops=1)
+                           Buffers: temp read=120242 written=120382
+                           ->  Sort  (cost=657846.78..660230.79 rows=953601 width=532) (actual time=6918.068..7745.221 rows=5940201 loops=1)
+                                 Sort Key: intermediate_result.transaction_id, intermediate_result.transaction_dt, intermediate_result.company_id, intermediate_result.company_id_src, intermediate_result.account_id, intermediate_result.account_id_src, intermediate_result.operation_type, intermediate_result.amount, intermediate_result.currency_code, intermediate_result.custom_1, intermediate_result.custom_2, intermediate_result.custom_3, intermediate_result.custom_4, intermediate_result.custom_5
+                                 Sort Method: external merge  Disk: 313136kB
+                                 Buffers: temp read=120242 written=120382
+                                 ->  Append  (cost=0.00..106823.77 rows=953601 width=532) (actual time=3006.250..5404.293 rows=5940201 loops=1)
+                                       Buffers: temp read=41960 written=41960
+                                       ->  Function Scan on read_intermediate_result intermediate_result  (cost=0.00..69152.23 rows=646153 width=532) (actual time=3006.249..3389.144 rows=4025064 loops=1)
+                                             Buffers: temp read=28431 written=28431
+                                       ->  Function Scan on read_intermediate_result intermediate_result_1  (cost=0.00..32903.54 rows=307448 width=532) (actual time=1424.938..1605.427 rows=1915137 loops=1)
+                                             Buffers: temp read=13529 written=13529
+                         Planning Time: 0.137 ms
+                         Execution Time: 10073.234 ms
+               Buffers: temp read=41959 written=41959
+         Planning Time: 0.000 ms
+         Execution Time: 19974.404 ms
+   Task Count: 1
+   Tuple data received from nodes: 168 bytes
+   Tasks Shown: All
+   ->  Task
+         Tuple data received from node: 168 bytes
+         Node: host=localhost port=5432 dbname=finance
+         ->  Limit  (cost=0.00..0.56 rows=5 width=532) (actual time=4399.120..4399.125 rows=5 loops=1)
+               Buffers: temp read=1 written=41959
+               ->  Function Scan on read_intermediate_result intermediate_result  (cost=0.00..106823.77 rows=953601 width=532) (actual time=4399.119..4399.122 rows=5 loops=1)
+                     Filter: ((transaction_dt >= '2023-01-01'::date) AND (transaction_dt <= '2023-01-02'::date))
+                     Rows Removed by Filter: 9
+                     Buffers: temp read=1 written=41959
+             Planning Time: 0.065 ms
+             Execution Time: 4423.045 ms
+   Buffers: shared hit=2
+ Planning:
+   Buffers: shared hit=407
+ Planning Time: 2.314 ms
+ Execution Time: 54929.812 ms
+(138 rows)
